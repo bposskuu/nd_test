@@ -1,0 +1,106 @@
+@use "@/assets/colors.scss" as *;
+@import 'base.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $dark;
+    font-family: "Montserrat",sans-serif;
+    color: white;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 104px;
+    line-height: 104px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: $green-light;
+}
+
+a:hover {
+    color: white;
+}
+
+.text_normal {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.text_small {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.text_small_bold {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+@media (max-width: 500px) {
+    .h1-mob {
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 64px;
+    }
+
+    .h2-mob {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .h3-mob {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    .text_small {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .text_normal {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .text_small_bold {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
