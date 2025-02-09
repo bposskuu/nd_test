@@ -19,19 +19,26 @@ export const useNotesStore = defineStore('notes', {
                 alert(e.response.data)
             }
         },
-        async postNote(title: string, content: string): Promise<void> {
+        async postNote(title: string, content: string): Promise<string> {
             const token = localStorage.getItem('token')
-            if (token === 'undefined' || token === null) return
+            if (token === 'undefined' || token === null) return 'Ошибка авторизации'
             try {
-                await axios.post(import.meta.env.VITE_API_URL + '/api/notes', {
+                const response = await axios.post(import.meta.env.VITE_API_URL + '/api/notes', {
                         title,
                         content,
                     },
                     {headers: {Authorization: 'Bearer ' + token}})
 
                 await this.getNotes()
+
+                if (response.status === 200) {
+                    return ''
+                }
+                else return response.data.message[0]
             } catch (e: any) {
-                alert(e.response.data)
+                console.log(e)
+                //alert(e.response.data)
+                return e.response.data.message[0]
             }
         },
         async deleteNote(id: number): Promise<void> {

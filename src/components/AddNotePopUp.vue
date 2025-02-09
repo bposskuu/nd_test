@@ -10,7 +10,7 @@
       <template v-slot:label>Текст заметки</template>
     </Input>
     <template v-slot:footer>
-      <Button @click="notes.postNote(title, content); app.showModal = ''">Добавить</Button>
+      <Button @click="async () => { warning = await notes.postNote(title, content); if (!warning) app.showModal = '' }">Добавить</Button>
     </template>
     <template v-slot:warning v-if="warning">
       {{ warning }}

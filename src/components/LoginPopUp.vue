@@ -11,7 +11,7 @@
       </Input>
       <template v-slot:footer>
         <span class="text_small">У вас нет аккаунта? <a href="#" class="text_small_bold" @click="app.showModal = 'SHOW_REGISTRATION'">Зарегистрируйтесь</a></span>
-        <Button @click="async () => { warning = await user.login(email, password); app.showModal = '' }">Войти</Button>
+        <Button @click="async () => { warning = await user.login(email, password); if (!warning) app.showModal = '' }">Войти</Button>
       </template>
       <template v-slot:warning v-if="warning">
         {{ warning }}
